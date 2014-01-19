@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface RottenTomatoesNetworkRequest : NSObject
+@interface DvdTopRentalsNetworkRequest : NSObject
 
 + (void)fetchDvdTopRentals:(void (^)(NSMutableArray *))callback;
 

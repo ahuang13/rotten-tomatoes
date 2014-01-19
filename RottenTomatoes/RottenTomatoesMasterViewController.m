@@ -8,7 +8,7 @@
 
 #import "RottenTomatoesMasterViewController.h"
 #import "RottenTomatoesDetailViewController.h"
-#import "RottenTomatoesNetworkRequest.h"
+#import "DvdTopRentalsNetworkRequest.h"
 #import "Movie.h"
 
 @interface RottenTomatoesMasterViewController ()
@@ -91,7 +91,7 @@
         // TODO: Reload table.
     };
     
-    [RottenTomatoesNetworkRequest fetchDvdTopRentals:(void (^)(NSMutableArray *))callback];
+    [DvdTopRentalsNetworkRequest fetchDvdTopRentals:(void (^)(NSMutableArray *))callback];
 }
 
 @end

@@ -6,10 +6,10 @@
 //  Copyright (c) 2014 Angus Huang. All rights reserved.
 //
 
-#import "RottenTomatoesNetworkRequest.h"
+#import "DvdTopRentalsNetworkRequest.h"
 #import "MoviesParser.h"
 
-@implementation RottenTomatoesNetworkRequest
+@implementation DvdTopRentalsNetworkRequest
 
 //==============================================================================
 #pragma mark - Private Constants
