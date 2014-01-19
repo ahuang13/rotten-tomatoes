@@ -21,14 +21,14 @@ NSString *const REQUEST_URL = @"http://api.rottentomatoes.com/api/public/v1.0/li
 #pragma mark - Public Methods
 //==============================================================================
 
-+ (void)fetchDvdTopRentals
++ (void)fetchDvdTopRentals:(void (^)(NSMutableArray *))callback
 {
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:REQUEST_URL]];
     
     void (^handler)(NSURLResponse*, NSData*, NSError*) = ^(NSURLResponse *response, NSData *data, NSError *connectionError) {
         NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-        NSLog(@"%@", dict);
-        [MoviesParser parse:dict];
+        NSMutableArray *movies = [MoviesParser parse:dict];
+        callback(movies);
     };
     
     [NSURLConnection sendAsynchronousRequest:request

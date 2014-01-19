@@ -10,6 +10,6 @@
 
 @interface RottenTomatoesNetworkRequest : NSObject
 
-+ (void)fetchDvdTopRentals;
++ (void)fetchDvdTopRentals:(void (^)(NSMutableArray *))callback;
 
 @end

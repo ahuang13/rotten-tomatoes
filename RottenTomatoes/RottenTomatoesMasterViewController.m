@@ -85,7 +85,13 @@
 
 - (void)loadData {
     
-    [RottenTomatoesNetworkRequest fetchDvdTopRentals];
+    void (^callback)() = ^(NSMutableArray *movies){
+        NSLog(@"handler callback received... %d", movies.count);
+        self.movies = movies;
+        // TODO: Reload table.
+    };
+    
+    [RottenTomatoesNetworkRequest fetchDvdTopRentals:(void (^)(NSMutableArray *))callback];
 }
 
 @end
