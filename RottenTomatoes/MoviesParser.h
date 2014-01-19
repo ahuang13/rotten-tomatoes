@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface MovieParser : NSObject
+@interface MoviesParser : NSObject
 
 + (NSMutableArray *)parse:(NSDictionary *)dict;
 

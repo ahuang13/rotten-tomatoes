@@ -24,7 +24,7 @@
 		92ED71AB188B6AFE006339F2 /* RottenTomatoesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 92ED71AA188B6AFE006339F2 /* RottenTomatoesTests.m */; };
 		92ED71B6188B6E96006339F2 /* RottenTomatoesNetworkRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 92ED71B5188B6E96006339F2 /* RottenTomatoesNetworkRequest.m */; };
 		92ED71B9188B7499006339F2 /* Movie.m in Sources */ = {isa = PBXBuildFile; fileRef = 92ED71B8188B7499006339F2 /* Movie.m */; };
-		92ED71BF188B7A6B006339F2 /* MovieParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 92ED71BE188B7A6B006339F2 /* MovieParser.m */; };
+		92ED71BF188B7A6B006339F2 /* MoviesParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 92ED71BE188B7A6B006339F2 /* MoviesParser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,8 +63,8 @@
 		92ED71B5188B6E96006339F2 /* RottenTomatoesNetworkRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RottenTomatoesNetworkRequest.m; sourceTree = "<group>"; };
 		92ED71B7188B7499006339F2 /* Movie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Movie.h; sourceTree = "<group>"; };
 		92ED71B8188B7499006339F2 /* Movie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Movie.m; sourceTree = "<group>"; };
-		92ED71BD188B7A6B006339F2 /* MovieParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieParser.h; sourceTree = "<group>"; };
-		92ED71BE188B7A6B006339F2 /* MovieParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieParser.m; sourceTree = "<group>"; };
+		92ED71BD188B7A6B006339F2 /* MoviesParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoviesParser.h; sourceTree = "<group>"; };
+		92ED71BE188B7A6B006339F2 /* MoviesParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoviesParser.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,8 +190,8 @@
 		92ED71BC188B7A5B006339F2 /* Parsers */ = {
 			isa = PBXGroup;
 			children = (
-				92ED71BD188B7A6B006339F2 /* MovieParser.h */,
-				92ED71BE188B7A6B006339F2 /* MovieParser.m */,
+				92ED71BD188B7A6B006339F2 /* MoviesParser.h */,
+				92ED71BE188B7A6B006339F2 /* MoviesParser.m */,
 			);
 			name = Parsers;
 			sourceTree = "<group>";
@@ -294,7 +294,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92ED71BF188B7A6B006339F2 /* MovieParser.m in Sources */,
+				92ED71BF188B7A6B006339F2 /* MoviesParser.m in Sources */,
 				92ED71B9188B7499006339F2 /* Movie.m in Sources */,
 				92ED718D188B6AFE006339F2 /* RottenTomatoesAppDelegate.m in Sources */,
 				92ED71B6188B6E96006339F2 /* RottenTomatoesNetworkRequest.m in Sources */,
@@ -509,6 +509,7 @@
 				92ED71B0188B6AFE006339F2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		92ED71B1188B6AFE006339F2 /* Build configuration list for PBXNativeTarget "RottenTomatoesTests" */ = {
 			isa = XCConfigurationList;
@@ -517,6 +518,7 @@
 				92ED71B3188B6AFE006339F2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

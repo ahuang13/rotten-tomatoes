@@ -7,7 +7,7 @@
 //
 
 #import "RottenTomatoesNetworkRequest.h"
-#import "MovieParser.h"
+#import "MoviesParser.h"
 
 @implementation RottenTomatoesNetworkRequest
 
@@ -28,7 +28,7 @@ NSString *const REQUEST_URL = @"http://api.rottentomatoes.com/api/public/v1.0/li
     void (^handler)(NSURLResponse*, NSData*, NSError*) = ^(NSURLResponse *response, NSData *data, NSError *connectionError) {
         NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
         NSLog(@"%@", dict);
-        [MovieParser parse:dict];
+        [MoviesParser parse:dict];
     };
     
     [NSURLConnection sendAsynchronousRequest:request
