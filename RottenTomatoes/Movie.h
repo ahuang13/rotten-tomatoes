@@ -16,4 +16,6 @@
 @property NSString *thumbnailPosterUrl;
 @property NSString *detailPosterUrl;
 
+- (NSString *)getFormattedCastString;
+
 @end

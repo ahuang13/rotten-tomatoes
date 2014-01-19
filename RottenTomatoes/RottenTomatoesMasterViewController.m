@@ -9,6 +9,7 @@
 #import "RottenTomatoesMasterViewController.h"
 #import "RottenTomatoesDetailViewController.h"
 #import "DvdTopRentalsNetworkRequest.h"
+#import "MovieCell.h"
 #import "Movie.h"
 
 @interface RottenTomatoesMasterViewController ()
@@ -61,11 +62,13 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    MovieCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
 
     Movie *movie = self.movies[indexPath.row];
     
-    // TODO: Set Outlets
+    cell.titleLabel.text = movie.title;
+    cell.synopsisLabel.text = movie.synopsis;
+    cell.castLabel.text = [movie getFormattedCastString];
     
     return cell;
 }
@@ -88,7 +91,7 @@
     void (^callback)() = ^(NSMutableArray *movies){
         NSLog(@"handler callback received... %d", movies.count);
         self.movies = movies;
-        // TODO: Reload table.
+        [self.tableView reloadData];
     };
     
     [DvdTopRentalsNetworkRequest fetchDvdTopRentals:(void (^)(NSMutableArray *))callback];

@@ -10,4 +10,8 @@
 
 @implementation Movie
 
+- (NSString *)getFormattedCastString {    
+    return [self.cast componentsJoinedByString:@", "];
+}
+
 @end
