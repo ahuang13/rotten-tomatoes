@@ -22,6 +22,9 @@
 		92ED71A1188B6AFE006339F2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92ED7180188B6AFE006339F2 /* UIKit.framework */; };
 		92ED71A9188B6AFE006339F2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 92ED71A7188B6AFE006339F2 /* InfoPlist.strings */; };
 		92ED71AB188B6AFE006339F2 /* RottenTomatoesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 92ED71AA188B6AFE006339F2 /* RottenTomatoesTests.m */; };
+		92ED71B6188B6E96006339F2 /* RottenTomatoesNetworkRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 92ED71B5188B6E96006339F2 /* RottenTomatoesNetworkRequest.m */; };
+		92ED71B9188B7499006339F2 /* Movie.m in Sources */ = {isa = PBXBuildFile; fileRef = 92ED71B8188B7499006339F2 /* Movie.m */; };
+		92ED71BF188B7A6B006339F2 /* MovieParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 92ED71BE188B7A6B006339F2 /* MovieParser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +59,12 @@
 		92ED71A6188B6AFE006339F2 /* RottenTomatoesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RottenTomatoesTests-Info.plist"; sourceTree = "<group>"; };
 		92ED71A8188B6AFE006339F2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		92ED71AA188B6AFE006339F2 /* RottenTomatoesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RottenTomatoesTests.m; sourceTree = "<group>"; };
+		92ED71B4188B6E96006339F2 /* RottenTomatoesNetworkRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RottenTomatoesNetworkRequest.h; sourceTree = "<group>"; };
+		92ED71B5188B6E96006339F2 /* RottenTomatoesNetworkRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RottenTomatoesNetworkRequest.m; sourceTree = "<group>"; };
+		92ED71B7188B7499006339F2 /* Movie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Movie.h; sourceTree = "<group>"; };
+		92ED71B8188B7499006339F2 /* Movie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Movie.m; sourceTree = "<group>"; };
+		92ED71BD188B7A6B006339F2 /* MovieParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieParser.h; sourceTree = "<group>"; };
+		92ED71BE188B7A6B006339F2 /* MovieParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieParser.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +124,9 @@
 		92ED7182188B6AFE006339F2 /* RottenTomatoes */ = {
 			isa = PBXGroup;
 			children = (
+				92ED71BC188B7A5B006339F2 /* Parsers */,
+				92ED71BB188B74DA006339F2 /* Networking */,
+				92ED71BA188B74C1006339F2 /* DataModels */,
 				92ED718B188B6AFE006339F2 /* RottenTomatoesAppDelegate.h */,
 				92ED718C188B6AFE006339F2 /* RottenTomatoesAppDelegate.m */,
 				92ED718E188B6AFE006339F2 /* Main.storyboard */,
@@ -155,6 +167,33 @@
 				92ED71A7188B6AFE006339F2 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		92ED71BA188B74C1006339F2 /* DataModels */ = {
+			isa = PBXGroup;
+			children = (
+				92ED71B7188B7499006339F2 /* Movie.h */,
+				92ED71B8188B7499006339F2 /* Movie.m */,
+			);
+			name = DataModels;
+			sourceTree = "<group>";
+		};
+		92ED71BB188B74DA006339F2 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				92ED71B4188B6E96006339F2 /* RottenTomatoesNetworkRequest.h */,
+				92ED71B5188B6E96006339F2 /* RottenTomatoesNetworkRequest.m */,
+			);
+			name = Networking;
+			sourceTree = "<group>";
+		};
+		92ED71BC188B7A5B006339F2 /* Parsers */ = {
+			isa = PBXGroup;
+			children = (
+				92ED71BD188B7A6B006339F2 /* MovieParser.h */,
+				92ED71BE188B7A6B006339F2 /* MovieParser.m */,
+			);
+			name = Parsers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,7 +294,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92ED71BF188B7A6B006339F2 /* MovieParser.m in Sources */,
+				92ED71B9188B7499006339F2 /* Movie.m in Sources */,
 				92ED718D188B6AFE006339F2 /* RottenTomatoesAppDelegate.m in Sources */,
+				92ED71B6188B6E96006339F2 /* RottenTomatoesNetworkRequest.m in Sources */,
 				92ED7196188B6AFE006339F2 /* RottenTomatoesDetailViewController.m in Sources */,
 				92ED7189188B6AFE006339F2 /* main.m in Sources */,
 				92ED7193188B6AFE006339F2 /* RottenTomatoesMasterViewController.m in Sources */,

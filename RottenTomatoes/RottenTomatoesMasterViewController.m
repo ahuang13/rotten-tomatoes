@@ -7,8 +7,8 @@
 //
 
 #import "RottenTomatoesMasterViewController.h"
-
 #import "RottenTomatoesDetailViewController.h"
+#import "RottenTomatoesNetworkRequest.h"
 
 @interface RottenTomatoesMasterViewController () {
     NSMutableArray *_objects;
@@ -16,6 +16,30 @@
 @end
 
 @implementation RottenTomatoesMasterViewController
+
+//==============================================================================
+#pragma mark - Initializers
+//==============================================================================
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        [self loadData];
+    }
+    return self;
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        [self loadData];
+    }
+    return self;
+}
+
+//==============================================================================
+#pragma mark - View Lifecycle
+//==============================================================================
 
 - (void)awakeFromNib
 {
@@ -32,12 +56,6 @@
     self.navigationItem.rightBarButtonItem = addButton;
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 - (void)insertNewObject:(id)sender
 {
     if (!_objects) {
@@ -48,7 +66,9 @@
     [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
+//==============================================================================
 #pragma mark - Table View
+//==============================================================================
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -108,6 +128,14 @@
         NSDate *object = _objects[indexPath.row];
         [[segue destinationViewController] setDetailItem:object];
     }
+}
+
+//==============================================================================
+#pragma mark - Private Methods
+//==============================================================================
+
+- (void)loadData {
+    [RottenTomatoesNetworkRequest fetchDvdTopRentals];
 }
 
 @end
