@@ -77,8 +77,8 @@
 {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSDate *object = self.movies[indexPath.row];
-        [[segue destinationViewController] setDetailItem:object];
+        Movie *movie = self.movies[indexPath.row];
+        [[segue destinationViewController] setDetailItem:movie];
     }
 }
 

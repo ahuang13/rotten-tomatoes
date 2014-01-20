@@ -10,16 +10,17 @@
 
 @interface RottenTomatoesDetailViewController ()
 - (void)configureView;
+@property (weak, nonatomic) IBOutlet UILabel *summaryLabel;
 @end
 
 @implementation RottenTomatoesDetailViewController
 
 #pragma mark - Managing the detail item
 
-- (void)setDetailItem:(id)newDetailItem
+- (void)setDetailItem:(Movie *)movie
 {
-    if (_detailItem != newDetailItem) {
-        _detailItem = newDetailItem;
+    if (_movie != movie) {
+        _movie = movie;
         
         // Update the view.
         [self configureView];
@@ -30,8 +31,8 @@
 {
     // Update the user interface for the detail item.
 
-    if (self.detailItem) {
-        self.detailDescriptionLabel.text = [self.detailItem description];
+    if (self.movie) {
+        self.summaryLabel.text = self.movie.synopsis;
     }
 }
 
@@ -40,12 +41,6 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     [self configureView];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end
