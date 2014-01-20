@@ -50,6 +50,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(loadData) forControlEvents:UIControlEventValueChanged];
+
 }
 
 //==============================================================================
@@ -93,6 +96,7 @@
     void (^callback)() = ^(NSMutableArray *movies){
         NSLog(@"handler callback received... %d", movies.count);
         self.movies = movies;
+        [self.refreshControl endRefreshing];
         [self.tableView reloadData];
     };
     
