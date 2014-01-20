@@ -32,6 +32,7 @@
     // Update the user interface for the detail item.
 
     if (self.movie) {
+        self.title = self.movie.title;
         self.summaryLabel.text = self.movie.synopsis;
     }
 }
