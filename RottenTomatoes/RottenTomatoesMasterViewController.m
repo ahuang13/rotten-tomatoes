@@ -50,9 +50,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    // Initialize pull-to-refresh.
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(loadData) forControlEvents:UIControlEventValueChanged];
-
 }
 
 //==============================================================================
