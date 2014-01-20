@@ -17,5 +17,6 @@
 @property NSString *detailPosterUrl;
 
 - (NSString *)getFormattedCastString;
+- (NSURL *)getDetailPosterNSURL;
 
 @end

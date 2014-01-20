@@ -36,7 +36,7 @@
     if (self.movie) {
         self.title = self.movie.title;
         self.summaryLabel.text = self.movie.synopsis;
-        [self setPosterImageWithUrl:self.movie.detailPosterUrl];
+        [self.imageView setImageWithURL:[self.movie getDetailPosterNSURL]];
     }
 }
 
@@ -45,27 +45,6 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     [self configureView];
-}
-
-//==============================================================================
-#pragma mark - Private Methods
-//==============================================================================
-
-- (void)setPosterImageWithUrl:(NSString *)urlString {
-    
-    NSURL *url = [NSURL URLWithString:urlString];
-    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
-    
-    // Successful download handler.
-    void (^onDownloadSuccess)(NSURLRequest *, NSHTTPURLResponse *, UIImage *) = ^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
-        self.imageView.image = image;
-    };
-    
-    // Download the thumbnail poster image.
-    [self.imageView setImageWithURLRequest:request
-                          placeholderImage:nil
-                                   success:onDownloadSuccess
-                                   failure:nil];
 }
 
 @end

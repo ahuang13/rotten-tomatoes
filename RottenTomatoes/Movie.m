@@ -14,4 +14,8 @@
     return [self.cast componentsJoinedByString:@", "];
 }
 
+- (NSURL *)getDetailPosterNSURL {
+    return [NSURL URLWithString:self.detailPosterUrl];
+}
+
 @end
