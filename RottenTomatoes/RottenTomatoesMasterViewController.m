@@ -11,6 +11,7 @@
 #import "DvdTopRentalsNetworkRequest.h"
 #import "MovieCell.h"
 #import "Movie.h"
+#import "UIImageView+AFNetworking.h"
 
 @interface RottenTomatoesMasterViewController ()
 
@@ -69,6 +70,7 @@
     cell.titleLabel.text = movie.title;
     cell.synopsisLabel.text = movie.synopsis;
     cell.castLabel.text = [movie getFormattedCastString];
+    [RottenTomatoesMasterViewController setPosterImageIn:cell forMovie:movie];
     
     return cell;
 }
@@ -95,6 +97,31 @@
     };
     
     [DvdTopRentalsNetworkRequest fetchDvdTopRentals:(void (^)(NSMutableArray *))callback];
+}
+
++ (void)setPosterImageIn:(MovieCell *)cell forMovie:(Movie *)movie {
+
+    __weak MovieCell *weakCell = cell;
+
+    NSURL *url = [NSURL URLWithString:movie.thumbnailPosterUrl];
+    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
+    
+    // Successful download handler.
+    void (^onDownloadSuccess)(NSURLRequest *, NSHTTPURLResponse *, UIImage *) = ^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
+        
+        weakCell.imageView.image = image;
+        
+        //only required if no placeholder is set to force the imageview on the cell to be laid out to house the new image.
+        if (weakCell.imageView.frame.size.height==0 || weakCell.imageView.frame.size.width==0 ){
+            [weakCell setNeedsLayout];
+        }
+    };
+    
+    // Download the thumbnail poster image.
+    [cell.imageView setImageWithURLRequest:request
+                          placeholderImage:nil
+                                   success:onDownloadSuccess
+                                   failure:nil];
 }
 
 @end

@@ -48,7 +48,7 @@
     
     // Parse poster URLs.
     NSDictionary *postersDict = [movieDict objectForKey:@"posters"];
-    movie.thumbnailPosterUrl = [postersDict objectForKey:@"thumbnail"];
+    movie.thumbnailPosterUrl = [postersDict objectForKey:@"profile"];
     movie.detailPosterUrl = [postersDict objectForKey:@"detailed"];
     NSLog(@"thumbnail = %@", movie.thumbnailPosterUrl);
     NSLog(@"detailed = %@", movie.detailPosterUrl);
