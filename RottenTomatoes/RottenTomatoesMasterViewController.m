@@ -12,6 +12,8 @@
 #import "MovieCell.h"
 #import "Movie.h"
 #import "UIImageView+AFNetworking.h"
+#import "TWMessageBarManager.h"
+#import "NetworkErrorMessageBarStyle.h"
 
 @interface RottenTomatoesMasterViewController ()
 
@@ -112,6 +114,11 @@
         NSInteger errorCode = connectionError.code;
         NSString *errorMsg = [connectionError.userInfo objectForKey:NSLocalizedDescriptionKey];
         NSLog(@"[%d] %@", errorCode, errorMsg);
+
+        [TWMessageBarManager sharedInstance].styleSheet = [[NetworkErrorMessageBarStyle alloc] init];
+        [[TWMessageBarManager sharedInstance] showMessageWithTitle:@"Network Error"
+                                                       description:@"Make sure you have an Internet connection."
+                                                              type:TWMessageBarMessageTypeSuccess];
     };
     
     self.isLoading = YES;
