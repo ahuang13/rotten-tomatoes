@@ -13,6 +13,7 @@
 - (void)configureView;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UILabel *summaryLabel;
+@property (weak, nonatomic) IBOutlet UILabel *castLabel;
 @end
 
 @implementation RottenTomatoesDetailViewController
@@ -34,9 +35,16 @@
     // Update the user interface for the detail item.
 
     if (self.movie) {
+        
         self.title = self.movie.title;
-        self.summaryLabel.text = self.movie.synopsis;
+
         [self.imageView setImageWithURL:[self.movie getDetailPosterNSURL]];
+        
+        self.summaryLabel.text = self.movie.synopsis;
+        [self.summaryLabel sizeToFit];
+        
+        self.castLabel.text = [self.movie getFormattedCastString];
+        [self.castLabel sizeToFit];
     }
 }
 
