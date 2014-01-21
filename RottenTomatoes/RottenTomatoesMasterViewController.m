@@ -73,7 +73,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     MovieCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-
+    
     Movie *movie = self.movies[indexPath.row];
     
     cell.titleLabel.text = movie.title;
@@ -106,14 +106,23 @@
         [self.tableView reloadData];
     };
     
+    void (^onDownloadError)(NSError *) = ^(NSError *connectionError) {
+        [self.refreshControl endRefreshing];
+        // TODO: Show error message.
+        NSInteger errorCode = connectionError.code;
+        NSString *errorMsg = [connectionError.userInfo objectForKey:NSLocalizedDescriptionKey];
+        NSLog(@"[%d] %@", errorCode, errorMsg);
+    };
+    
     self.isLoading = YES;
-    [DvdTopRentalsNetworkRequest fetchDvdTopRentals:(void (^)(NSMutableArray *))callback];
+    [DvdTopRentalsNetworkRequest fetchDvdTopRentals:(void (^)(NSMutableArray *))callback
+                                       errorHandler:onDownloadError];
 }
 
 + (void)setPosterImageIn:(MovieCell *)cell forMovie:(Movie *)movie {
-
+    
     __weak MovieCell *weakCell = cell;
-
+    
     NSURL *url = [NSURL URLWithString:movie.thumbnailPosterUrl];
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
     

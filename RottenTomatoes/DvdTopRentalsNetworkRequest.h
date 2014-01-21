@@ -10,6 +10,6 @@
 
 @interface DvdTopRentalsNetworkRequest : NSObject
 
-+ (void)fetchDvdTopRentals:(void (^)(NSMutableArray *))callback;
++ (void)fetchDvdTopRentals:(void (^)(NSMutableArray *))callback errorHandler:(void (^)(NSError *))errorHandler;
 
 @end
