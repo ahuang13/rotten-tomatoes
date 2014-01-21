@@ -14,6 +14,7 @@
 #import "UIImageView+AFNetworking.h"
 #import "TWMessageBarManager.h"
 #import "NetworkErrorMessageBarStyle.h"
+#import "RottenTomatoesDetailsViewController.h"
 
 @interface RottenTomatoesMasterViewController ()
 
@@ -84,6 +85,14 @@
     [RottenTomatoesMasterViewController setPosterImageIn:cell forMovie:movie];
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    Movie *movie = self.movies[indexPath.row];
+    RottenTomatoesDetailsViewController *detailsController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"RottenTomatoesDetailsViewController"];
+    detailsController.movie = movie;
+    [self.navigationController pushViewController:detailsController animated:YES];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

@@ -28,6 +28,7 @@
 		92ED71B9188B7499006339F2 /* Movie.m in Sources */ = {isa = PBXBuildFile; fileRef = 92ED71B8188B7499006339F2 /* Movie.m */; };
 		92ED71BF188B7A6B006339F2 /* MoviesParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 92ED71BE188B7A6B006339F2 /* MoviesParser.m */; };
 		92F4384D188E6AE400453651 /* NetworkErrorMessageBarStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F4384C188E6AE400453651 /* NetworkErrorMessageBarStyle.m */; };
+		92F43852188F13C400453651 /* RottenTomatoesDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F43851188F13C400453651 /* RottenTomatoesDetailsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,8 @@
 		92ED71BE188B7A6B006339F2 /* MoviesParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoviesParser.m; sourceTree = "<group>"; };
 		92F4384B188E6AE400453651 /* NetworkErrorMessageBarStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkErrorMessageBarStyle.h; sourceTree = "<group>"; };
 		92F4384C188E6AE400453651 /* NetworkErrorMessageBarStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkErrorMessageBarStyle.m; sourceTree = "<group>"; };
+		92F43850188F13C400453651 /* RottenTomatoesDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RottenTomatoesDetailsViewController.h; sourceTree = "<group>"; };
+		92F43851188F13C400453651 /* RottenTomatoesDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RottenTomatoesDetailsViewController.m; sourceTree = "<group>"; };
 		9A3EFFC429CD4D6FB7080CD5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -149,6 +152,8 @@
 				92ED7192188B6AFE006339F2 /* RottenTomatoesMasterViewController.m */,
 				92ED7194188B6AFE006339F2 /* RottenTomatoesDetailViewController.h */,
 				92ED7195188B6AFE006339F2 /* RottenTomatoesDetailViewController.m */,
+				92F43850188F13C400453651 /* RottenTomatoesDetailsViewController.h */,
+				92F43851188F13C400453651 /* RottenTomatoesDetailsViewController.m */,
 				92ED7197188B6AFE006339F2 /* Images.xcassets */,
 				92ED7183188B6AFE006339F2 /* Supporting Files */,
 				92A3D6E8188B8B7000A17147 /* MovieCell.h */,
@@ -364,6 +369,7 @@
 				92ED7189188B6AFE006339F2 /* main.m in Sources */,
 				92A3D6EA188B8B7000A17147 /* MovieCell.m in Sources */,
 				92ED7193188B6AFE006339F2 /* RottenTomatoesMasterViewController.m in Sources */,
+				92F43852188F13C400453651 /* RottenTomatoesDetailsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
