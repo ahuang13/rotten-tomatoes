@@ -16,6 +16,7 @@
 @interface RottenTomatoesMasterViewController ()
 
 @property (nonatomic, strong) NSMutableArray *movies;
+@property BOOL isLoading;
 
 @end
 
@@ -54,6 +55,10 @@
     // Initialize pull-to-refresh.
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(loadData) forControlEvents:UIControlEventValueChanged];
+    
+    if (self.isLoading) {
+        [self.refreshControl beginRefreshing];
+    }
 }
 
 //==============================================================================
@@ -101,6 +106,7 @@
         [self.tableView reloadData];
     };
     
+    self.isLoading = YES;
     [DvdTopRentalsNetworkRequest fetchDvdTopRentals:(void (^)(NSMutableArray *))callback];
 }
 
