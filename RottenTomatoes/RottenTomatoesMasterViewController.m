@@ -7,7 +7,6 @@
 //
 
 #import "RottenTomatoesMasterViewController.h"
-#import "RottenTomatoesDetailViewController.h"
 #import "DvdTopRentalsNetworkRequest.h"
 #import "MovieCell.h"
 #import "Movie.h"
@@ -93,15 +92,6 @@
     RottenTomatoesDetailsViewController *detailsController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"RottenTomatoesDetailsViewController"];
     detailsController.movie = movie;
     [self.navigationController pushViewController:detailsController animated:YES];
-}
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([[segue identifier] isEqualToString:@"showDetail"]) {
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        Movie *movie = self.movies[indexPath.row];
-        [[segue destinationViewController] setDetailItem:movie];
-    }
 }
 
 //==============================================================================

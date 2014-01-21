@@ -17,7 +17,6 @@
 		92ED718D188B6AFE006339F2 /* RottenTomatoesAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92ED718C188B6AFE006339F2 /* RottenTomatoesAppDelegate.m */; };
 		92ED7190188B6AFE006339F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92ED718E188B6AFE006339F2 /* Main.storyboard */; };
 		92ED7193188B6AFE006339F2 /* RottenTomatoesMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92ED7192188B6AFE006339F2 /* RottenTomatoesMasterViewController.m */; };
-		92ED7196188B6AFE006339F2 /* RottenTomatoesDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92ED7195188B6AFE006339F2 /* RottenTomatoesDetailViewController.m */; };
 		92ED7198188B6AFE006339F2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92ED7197188B6AFE006339F2 /* Images.xcassets */; };
 		92ED719F188B6AFE006339F2 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92ED719E188B6AFE006339F2 /* XCTest.framework */; };
 		92ED71A0188B6AFE006339F2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92ED717C188B6AFE006339F2 /* Foundation.framework */; };
@@ -59,8 +58,6 @@
 		92ED718F188B6AFE006339F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		92ED7191188B6AFE006339F2 /* RottenTomatoesMasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RottenTomatoesMasterViewController.h; sourceTree = "<group>"; };
 		92ED7192188B6AFE006339F2 /* RottenTomatoesMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RottenTomatoesMasterViewController.m; sourceTree = "<group>"; };
-		92ED7194188B6AFE006339F2 /* RottenTomatoesDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RottenTomatoesDetailViewController.h; sourceTree = "<group>"; };
-		92ED7195188B6AFE006339F2 /* RottenTomatoesDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RottenTomatoesDetailViewController.m; sourceTree = "<group>"; };
 		92ED7197188B6AFE006339F2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		92ED719D188B6AFE006339F2 /* RottenTomatoesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RottenTomatoesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		92ED719E188B6AFE006339F2 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -150,8 +147,6 @@
 				92ED718E188B6AFE006339F2 /* Main.storyboard */,
 				92ED7191188B6AFE006339F2 /* RottenTomatoesMasterViewController.h */,
 				92ED7192188B6AFE006339F2 /* RottenTomatoesMasterViewController.m */,
-				92ED7194188B6AFE006339F2 /* RottenTomatoesDetailViewController.h */,
-				92ED7195188B6AFE006339F2 /* RottenTomatoesDetailViewController.m */,
 				92F43850188F13C400453651 /* RottenTomatoesDetailsViewController.h */,
 				92F43851188F13C400453651 /* RottenTomatoesDetailsViewController.m */,
 				92ED7197188B6AFE006339F2 /* Images.xcassets */,
@@ -365,7 +360,6 @@
 				92ED71B9188B7499006339F2 /* Movie.m in Sources */,
 				92ED718D188B6AFE006339F2 /* RottenTomatoesAppDelegate.m in Sources */,
 				92ED71B6188B6E96006339F2 /* DvdTopRentalsNetworkRequest.m in Sources */,
-				92ED7196188B6AFE006339F2 /* RottenTomatoesDetailViewController.m in Sources */,
 				92ED7189188B6AFE006339F2 /* main.m in Sources */,
 				92A3D6EA188B8B7000A17147 /* MovieCell.m in Sources */,
 				92ED7193188B6AFE006339F2 /* RottenTomatoesMasterViewController.m in Sources */,
