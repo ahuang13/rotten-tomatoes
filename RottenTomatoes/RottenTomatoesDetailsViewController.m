@@ -68,15 +68,6 @@
     cell.textLabel.text = text;
     cell.textLabel.font = [UIFont systemFontOfSize:11];
     cell.textLabel.numberOfLines = 0;
-//    [cell.textLabel sizeToFit];
-
-    NSLog(@"%d", indexPath.row);
-    NSLog(@"%d", indexPath.section);
-    
-    // Configure the cell...
-//    cell.textLabel;
-//    cell.detailTextLabel;
-//    cell.imageView;
     
     return cell;
 }
